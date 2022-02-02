@@ -32,8 +32,6 @@ These instructions assumes that you have a working installation of `git`, `docke
 - [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [Node](https://nodejs.org/en/download/)
 
-#### LOCAL
-
 Provision the necessary services needed for running the application locally:
 
 1. Clone this repository to your PC and 
@@ -49,12 +47,19 @@ Provision the necessary services needed for running the application locally:
    ```
 
    App Endpoints:
+
+   ```
    POST endpoint - `http://localhost:<PORT>`
    GET endpoint - `http://localhost:<PORT>`
    GET metrics endpoint - `http://localhost:<PORT>/metrics`
+   ```
 
    Or test the endpoints using Postman.
 
-1. To deploy the application to a local minikube cluster, you need to first spin up the minikube environment using `minikube start`
-1. From the root of the repository, deploy the manifest files using `helm install node-k8s node-k8s-0.1.0.tgz`
+1. To deploy the application to a local minikube cluster, you need to first spin up the minikube environment using `minikube start` or:
+- Visit [Kubernetes](https://kubernetes.io/docs/tutorials/hello-minikube/) an launch a new terminal
+- Run `sudo snap install helm --classic` to install `helm`
+- Clone this repository `https://github.com/GerrardE/node-k8s.git` and `cd node-k8s`
+
+1. From the root of the directory, deploy the manifest files using `helm install node-k8s node-k8s-0.1.0.tgz`
 1. Run `kubectl get all` to review resources deployed.
