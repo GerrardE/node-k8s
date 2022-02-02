@@ -1,0 +1,19 @@
+replicaCount: 3
+
+application:
+  name: node-k8s
+
+image:
+  repository: "ezeugwagerrard/node-k8s"
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+deployment:
+  metaname: node-k8s-deployment
+  name: api
+  containerPort: 3000
+
+service:
+  type: LoadBalancer
+  port: 80
+  
